@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ce8y42ev4m7bv"]
+
+[ext_resource type="Script" uid="uid://cvjoqlhk71lh" path="res://player/player.gd" id="1_oul6g"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kqu6x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oul6g"]
+albedo_color = Color(1.92523e-06, 0.5362218, 0.76056236, 1)
+stencil_flags = 2
+
+[sub_resource type="PrismMesh" id="PrismMesh_oul6g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1670010158 node_paths=PackedStringArray("pivot")]
+script = ExtResource("1_oul6g")
+pivot = NodePath("Pivot")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1432428866]
+
+[node name="Meshes" type="Node3D" parent="Pivot" unique_id=641667691]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Meshes" unique_id=1423802468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_kqu6x")
+surface_material_override/0 = SubResource("StandardMaterial3D_oul6g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot/Meshes" unique_id=254403851]
+transform = Transform3D(0.38749135, 0, 0, 0, 0.31715047, 0, 0, 0, 1.0000007, 0, 1.7654865, -0.5211577)
+mesh = SubResource("PrismMesh_oul6g")
+
+[node name="Light" type="Node3D" parent="Pivot" unique_id=644523194]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Pivot/Light" unique_id=856605175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+light_energy = 50.0
+shadow_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1749962289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_oul6g")

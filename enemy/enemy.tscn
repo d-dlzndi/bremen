@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dj31ktobkyg6o"]
+
+[ext_resource type="Script" uid="uid://50w8sfxfq352" path="res://enemy/enemy.gd" id="1_2mvqj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kqu6x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oul6g"]
+albedo_color = Color(4.9258876, 0, 0.77555966, 1)
+stencil_flags = 2
+
+[sub_resource type="PrismMesh" id="PrismMesh_oul6g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
+
+[node name="Enemy" type="CharacterBody3D" unique_id=1670010158 node_paths=PackedStringArray("navigation_agent_3d")]
+script = ExtResource("1_2mvqj")
+navigation_agent_3d = NodePath("NavigationAgent3D")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1432428866]
+
+[node name="Meshes" type="Node3D" parent="Pivot" unique_id=641667691]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Meshes" unique_id=1423802468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_kqu6x")
+surface_material_override/0 = SubResource("StandardMaterial3D_oul6g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot/Meshes" unique_id=254403851]
+transform = Transform3D(0.38749135, 0, 0, 0, 0.31715047, 0, 0, 0, 1.0000007, 0, 1.7654865, -0.5211577)
+mesh = SubResource("PrismMesh_oul6g")
+
+[node name="Light" type="Node3D" parent="Pivot" unique_id=644523194]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Pivot/Light" unique_id=856605175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+light_energy = 50.0
+shadow_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1749962289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_oul6g")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1136722052]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(1, 0, 1, 1)
