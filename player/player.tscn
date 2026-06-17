@@ -12,7 +12,7 @@ stencil_flags = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1670010158 node_paths=PackedStringArray("pivot")]
+[node name="Player" type="CharacterBody3D" unique_id=1670010158 node_paths=PackedStringArray("pivot") groups=["player"]]
 script = ExtResource("1_oul6g")
 pivot = NodePath("Pivot")
 

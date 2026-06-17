@@ -12,9 +12,10 @@ stencil_flags = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
 
-[node name="Enemy" type="CharacterBody3D" unique_id=1670010158 node_paths=PackedStringArray("navigation_agent_3d")]
+[node name="Enemy" type="CharacterBody3D" unique_id=1670010158 node_paths=PackedStringArray("pivot", "navigation_agent")]
 script = ExtResource("1_2mvqj")
-navigation_agent_3d = NodePath("NavigationAgent3D")
+pivot = NodePath("Pivot")
+navigation_agent = NodePath("NavigationAgent3D")
 
 [node name="Pivot" type="Node3D" parent="." unique_id=1432428866]
 
