@@ -13,15 +13,39 @@ config_version=5
 config/name="BREMEN"
 run/main_scene="uid://dutlt3yf4j8km"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/stretch_mode=0
+boot_splash/image="uid://bxbeybq36vjv6"
 config/icon="res://icon.png"
+
+[autoload]
+
+DebugMenu="*uid://cggqb75a8w8r"
+SignalBus="*uid://vx2p2i46ljey"
+InputLockManager="*uid://cwnw8je5qy5vf"
+PlayerRuntimeData="*uid://chph6ddh5t7ph"
+SceneLoader="*uid://dluahf4ft7igx"
+
+[debug]
+
+gdscript/warnings/missing_await=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/TileMapLayer3D/plugin.cfg")
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/TileMapLayer3D/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://test/": "gray"
+}
 
 [global_group]
 
 player=""
+interactable=""
+pausable=""
+enemy=""
 
 [input]
 
@@ -63,6 +87,11 @@ crouch={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+
+[project_time_traker]
+
+general/file/location="Custom"
+general/file/custom="res://addons"
 
 [rendering]
 

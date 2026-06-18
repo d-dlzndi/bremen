@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ce8y42ev4m7bv" path="res://player/player.tscn" id="1_2262g"]
 [ext_resource type="Script" uid="uid://4kv8f8ejgwqn" path="res://addons/TileMapLayer3D/nodes/tilemap_layer_3d.gd" id="2_ifaiv"]
 [ext_resource type="Script" uid="uid://dk0ib5b4w24ll" path="res://addons/TileMapLayer3D/core/animated_tiles/animated_tile_data.gd" id="3_5k4jt"]
-[ext_resource type="TileSet" uid="uid://17qr8hboxu07" path="res://test_tileset.res" id="4_21ko3"]
+[ext_resource type="TileSet" uid="uid://17qr8hboxu07" path="res://test/test_tileset.res" id="4_21ko3"]
 [ext_resource type="Texture2D" uid="uid://bmh3bjg27mout" path="res://assets/Phuture Retro Tileset by zingot/gfx_phuture_retro_v22.0206/tilesheet_1_transparent.png" id="4_qy63d"]
 [ext_resource type="Script" uid="uid://bli432i5uj51v" path="res://addons/TileMapLayer3D/core/tile_creation_placement/tilemap_layer_settings.gd" id="5_6et1j"]
 [ext_resource type="Script" uid="uid://c2lxt2vjdjb4b" path="res://addons/TileMapLayer3D/nodes/static_collision_body.gd" id="7_s07ge"]
@@ -17,6 +17,7 @@
 [ext_resource type="Shape3D" uid="uid://o5n3qfo8oj23" path="res://levels/main_SavedData/main_TileMapLayer3D_collision_0_0_0.res" id="15_3yxmn"]
 [ext_resource type="Shape3D" uid="uid://dydsoxbyhb8gk" path="res://levels/main_SavedData/main_TileMapLayer3D_collision_-1_0_0.res" id="16_iivgo"]
 [ext_resource type="PackedScene" uid="uid://dj31ktobkyg6o" path="res://enemy/enemy.tscn" id="17_s07ge"]
+[ext_resource type="Texture2D" uid="uid://bxbeybq36vjv6" path="res://icon.png" id="18_iwo8l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ri1ix"]
 size = Vector3(60, 2, 60)
@@ -135,3 +136,18 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=199469741]
 navigation_mesh = SubResource("NavigationMesh_s07ge")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1377058626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.290154, -3.4149199)
+pixel_size = 0.1
+transparent = false
+texture_filter = 0
+texture = ExtResource("18_iwo8l")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=905253749]
+transform = Transform3D(-0.29580808, 0.027788656, -0.95484316, 0, 0.9995768, 0.029090533, 0.9552474, 0.008605215, -0.2956829, -3.6367188, 3.739132, -1.0303833)
+pixel_size = 0.1
+transparent = false
+shaded = true
+texture_filter = 0
+texture = ExtResource("18_iwo8l")
